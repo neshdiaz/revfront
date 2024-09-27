@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:rev_digitales_app/bodegas/presentation/widgets/ListCardBodegas.dart';
+import '../../data/models/bodega.dart';
+import 'package:rev_digitales_app/bodegas/presentation/widgets/bodega_list.dart';
 import 'package:rev_digitales_app/shared/widgets/navigation_bar.dart';
 
-class Bodegas extends StatefulWidget {
-  const Bodegas({super.key});
+class BodegaDetailPage extends StatelessWidget {
 
-  @override
-  State<Bodegas> createState() => _BodegasState();
-}
+  final Bodega bodega;
 
-class _BodegasState extends State<Bodegas> {
-  int counter = 0;
+  const BodegaDetailPage({
+    super.key,
+    required this.bodega
+    });
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Bodegas'),
+          title: const Text('Detalle de la bodega'),
           leading: IconButton(
             icon: Icon(Icons.menu),
             onPressed: () {
@@ -32,8 +32,9 @@ class _BodegasState extends State<Bodegas> {
             ),
           ],
         ),
-        body: SingleChildScrollView(child: ListCardBodegas()),
+        body: Text(bodega.nombre),
         bottomNavigationBar: MyNavigationBar()
       );
   }
 }
+

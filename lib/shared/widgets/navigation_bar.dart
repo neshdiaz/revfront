@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rev_digitales_app/bodegas/presentation/pages/bodegas_page.dart';
+import 'package:rev_digitales_app/bodegas/presentation/pages/bodega_page.dart';
 import 'package:rev_digitales_app/home/presentation/pages/home_page.dart';
 import 'package:rev_digitales_app/compras/presentation/pages/compras_page.dart';
 import 'package:rev_digitales_app/informes/presentation/pages/informes_page.dart';
@@ -16,7 +16,7 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
   final List<Widget> _screens = [
     Home(),
     Compras(),
-    Bodegas(),
+    BodegaListPage(),
     Informes(),
   ];
 
