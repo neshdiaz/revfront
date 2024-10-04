@@ -11,7 +11,7 @@ class BodegaRepository {
 
     if (response.statusCode == 200) {
       final dynamic rawData = jsonDecode(response.body);
-      final dynamic bodega_data = rawData['results'];
+      final List<dynamic> bodega_data = rawData['results'];
 
       //Extraemos solo los datos de las bodegas
       List<dynamic> data = bodega_data;
