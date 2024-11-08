@@ -18,12 +18,26 @@ class BodegaCard extends StatelessWidget {
         children: <Widget>[
           ListTile(
             leading: const Icon(Icons.corporate_fare),
-            title: Text('bodega # ${bodega.id}'),
-            subtitle: Text(bodega.nombre),
+            title: Text('${bodega.nombre}'),
             onTap: () {
               Navigator.push(context, MaterialPageRoute(builder: (context)=> BodegaDetailPage(bodega: bodega)));
             }
-          )
+          ),
+          Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: <Widget>[
+                TextButton(
+                  child: const Text('Detalles'),
+                  onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context)=> BodegaDetailPage(bodega: bodega)));},
+                ),
+                const SizedBox(width: 8),
+                TextButton(
+                  child: const Text('Ver Plataformas'),
+                  onPressed: () {/* ... */},
+                ),
+                const SizedBox(width: 8),
+              ],
+            ),
         ],
       ),
     );

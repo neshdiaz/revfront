@@ -15,9 +15,8 @@ class BodegaListResponsables extends StatelessWidget {
         shrinkWrap: true,
         itemBuilder: (context, index) {
           var responsable = responsables[index];
-          return ListTile(
-            title: Text('Responsables: ${responsable['usuario_auth']['first_name']}'),
-          );
+          return
+            Text('[${responsable['usuario_auth']['first_name']} ${responsable['usuario_auth']['last_name']}]');
         });
   }
 }

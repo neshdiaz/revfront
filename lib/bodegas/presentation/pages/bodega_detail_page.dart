@@ -32,17 +32,19 @@ class BodegaDetailPage extends StatelessWidget {
             ),
           ],
         ),
-        body: SingleChildScrollView(
-        child: Column(crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('Nombre: ${bodega.nombre}'),
-            Text('Creada: ${bodega.created}'),
-            Text('Actualizada: ${bodega.updated}'),
-            //Aqui va el widget que muestra la lista de responables...
-            //Text('Responsables: ${bodega.responsables[0]['usuario_auth']['first_name']}'),
-            BodegaListResponsables(responsables: bodega.responsables),
-          ],
-        ),
+        body: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: SingleChildScrollView(
+          child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text('Nombre: ${bodega.nombre}'),
+              Text('Creada: ${bodega.created}'),
+              Text('Actualizada: ${bodega.updated}'),
+              Text('Responsables:'),
+              BodegaListResponsables(responsables: bodega.responsables),
+            ],
+          ),
+          ),
         ),
         bottomNavigationBar: MyNavigationBar()
       );
